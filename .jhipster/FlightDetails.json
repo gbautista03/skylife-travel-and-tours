@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220328073643",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "flight_details",
+  "fields": [
+    {
+      "fieldName": "origin",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "destination",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "flightNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "carrier",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "departureDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "arrivalDate",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "FlightDetails",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "packageTour",
+      "otherEntityRelationshipName": "flightDetails",
+      "ownerSide": false,
+      "relationshipName": "packageTour",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

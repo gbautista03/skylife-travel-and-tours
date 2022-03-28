@@ -10,6 +10,18 @@ import activate from 'app/modules/account/activate/activate.reducer';
 import password from 'app/modules/account/password/password.reducer';
 import settings from 'app/modules/account/settings/settings.reducer';
 import passwordReset from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import oHDC from 'app/entities/ohdc/ohdc.reducer';
+// prettier-ignore
+import requirements from 'app/entities/requirements/requirements.reducer';
+// prettier-ignore
+import packageInclusionsExclusions from 'app/entities/package-inclusions-exclusions/package-inclusions-exclusions.reducer';
+// prettier-ignore
+import flightDetails from 'app/entities/flight-details/flight-details.reducer';
+// prettier-ignore
+import passenger from 'app/entities/passenger/passenger.reducer';
+// prettier-ignore
+import packageTour from 'app/entities/package-tour/package-tour.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -22,6 +34,12 @@ const rootReducer = {
   passwordReset,
   password,
   settings,
+  oHDC,
+  requirements,
+  packageInclusionsExclusions,
+  flightDetails,
+  passenger,
+  packageTour,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };
