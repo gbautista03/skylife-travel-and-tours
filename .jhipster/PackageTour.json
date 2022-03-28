@@ -1,0 +1,96 @@
+{
+  "applications": "*",
+  "changelogDate": "20220328073645",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "package_tour",
+  "fields": [
+    {
+      "fieldName": "days",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nights",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "destination",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tourCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hotel",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "roomType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "numberOfGuest",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PackageTour",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "destination",
+      "otherEntityName": "packageInclusionsExclusions",
+      "otherEntityRelationshipName": "packageTour",
+      "ownerSide": true,
+      "relationshipName": "inclusionExclusion",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "destination",
+      "otherEntityName": "requirements",
+      "otherEntityRelationshipName": "packageTour",
+      "ownerSide": true,
+      "relationshipName": "requirements",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "destination",
+      "otherEntityName": "oHDC",
+      "otherEntityRelationshipName": "packageTour",
+      "ownerSide": true,
+      "relationshipName": "ohdc",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "firstName",
+      "otherEntityName": "passenger",
+      "otherEntityRelationshipName": "packageTour",
+      "ownerSide": true,
+      "relationshipName": "passenger",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "flightDetails",
+      "otherEntityRelationshipName": "packageTour",
+      "ownerSide": true,
+      "relationshipName": "flightDetails",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

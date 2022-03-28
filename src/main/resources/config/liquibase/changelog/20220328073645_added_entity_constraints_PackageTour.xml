@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity PackageTour.
+    -->
+    <changeSet id="20220328073645-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="inclusion_exclusion_id"
+                                 baseTableName="package_tour"
+                                 constraintName="fk_package_tour__inclusion_exclusion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="package_inclusions_exclusions"/>
+
+        <addForeignKeyConstraint baseColumnNames="requirements_id"
+                                 baseTableName="package_tour"
+                                 constraintName="fk_package_tour__requirements_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="requirements"/>
+
+        <addForeignKeyConstraint baseColumnNames="ohdc_id"
+                                 baseTableName="package_tour"
+                                 constraintName="fk_package_tour__ohdc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ohdc"/>
+
+        <addForeignKeyConstraint baseColumnNames="package_tour_id"
+                                 baseTableName="rel_package_tour__passenger"
+                                 constraintName="fk_rel_package_tour__passenger__package_tour_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="package_tour"/>
+
+        <addForeignKeyConstraint baseColumnNames="passenger_id"
+                                 baseTableName="rel_package_tour__passenger"
+                                 constraintName="fk_rel_package_tour__passenger__passenger_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="passenger"/>
+
+        <addForeignKeyConstraint baseColumnNames="package_tour_id"
+                                 baseTableName="rel_package_tour__flight_details"
+                                 constraintName="fk_rel_package_tour__flight_details__package_tour_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="package_tour"/>
+
+        <addForeignKeyConstraint baseColumnNames="flight_details_id"
+                                 baseTableName="rel_package_tour__flight_details"
+                                 constraintName="fk_rel_package_tour__flight_details__flight_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="flight_details"/>
+    </changeSet>
+</databaseChangeLog>
