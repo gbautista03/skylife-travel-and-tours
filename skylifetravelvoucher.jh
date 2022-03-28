@@ -1,0 +1,58 @@
+entity OHDC {
+	destination String required unique,
+    description TextBlob required,
+    contactDescription TextBlob required
+}
+
+entity Requirements {
+	destination String required unique,
+    description TextBlob required
+}
+
+entity PackageInclusionsExclusions {
+	destination String required unique,
+	inclusions TextBlob required,
+    exclusions TextBlob required
+}
+
+entity FlightDetails {
+	origin String required,
+    destination String required,
+    flightNumber String required,
+    carrier String required,
+    departureDate ZonedDateTime required,
+    arrivalDate ZonedDateTime
+}
+
+entity Passenger {
+	firstName String required,
+    lastName String required,
+    birthday LocalDate required,
+    gender String required,
+    citizenship String required,
+    contactNumber String required,
+    emailAddress String required
+}
+
+entity PackageTour {
+	days Integer required,
+    nights Integer required,
+    destination String required,
+    tourCode String required unique,
+    date LocalDate required,
+    hotel String required,
+    roomType String required,
+    numberOfGuest Integer required
+}
+
+relationship ManyToMany {
+	PackageTour{passenger(firstName)} to Passenger
+    PackageTour{flightDetails} to FlightDetails
+}
+
+relationship OneToOne {
+	PackageTour{inclusionExclusion(destination)} to PackageInclusionsExclusions
+    PackageTour{requirements(destination)} to Requirements
+    PackageTour{ohdc(destination)} to OHDC
+}
+    
